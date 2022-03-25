@@ -33,7 +33,7 @@ const questions = [
         type: 'list',
         name:'license',
         message: 'What license would you like to use for the app?',
-        choices: ['MIT']
+        choices: ['MIT', 'Apache', 'GPL', 'BSD']
     },
     {
         type: 'input',
@@ -42,7 +42,13 @@ const questions = [
     }
 ] 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+        throw err;
+        console.log('Success! Information transferred to the REDAME!')
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {
