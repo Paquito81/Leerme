@@ -43,24 +43,63 @@ const questions = [
 ] 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
-        if (err)
-        throw err;
-        console.log('Success! Information transferred to the REDAME!')
-    });
-};
+    fs.writeFile(fileName, data, function(err) {
+        console.log(filename)
+        console.log(answers)
+        if(err) {
+            return console.log(err)
 
-// TODO: Create a function to initialize app
-function init() {
-    console.log("initializing app ...");
-    inquirer.prompt(questions)
-        .then(answers => generateTemplate(answers))
+        } else {
+            console.log('Success! Information transferred to the README!')
 
+        }
+    }) 
+    //=> {
+        // if (err)
+        // throw err;
+        // console.log('Success! Information transferred to the README!')
+    //});
 }
 
-function generateTemplate(obj) {
-    console.log(obj)
-} 
+function init() {
+    inquirer.prompt(questions)
+        .then(function(data) {
+            writeToFile("README.md", generateTemplate(answers));
+            console.log(answers)
+
+        })
+
+}
+// TODO: Create a function to initialize app
+// function init() {
+//     console.log("Initializing app ...")
+//     inquirer.prompt(questions)
+//     .then(answers => generateTemplate(answers) 
+//     )
+// }
+// function init(){
+//     console.log("Initializing app ...")
+//     inquirer.prompt(questions)
+//     .then(answers => generateTemplate(answers) 
+//     writeToFile('README.md',generateTemplate(answers));
+//     console.log(answers)
+//     )
+// }    
+// unctifon init() {
+//     console.log("initializing app ...");
+//     inquirer.prompt(questions)
+//         .then(answers => generateTemplate(answers)); {
+//             console.log(answers)
+//             writeToFile('README.md', generateTemplate(answers));
+//         };    
+//     };
+        
+
+// };
+
+ function generateTemplate(obj) {
+     console.log(obj)
+ } 
 
 // Function call to initialize app
 init();

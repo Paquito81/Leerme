@@ -1,3 +1,5 @@
-function generateMarkdownData(data) {
-    return `# ${data.title}
-}
+generateToTemplate function generateMarkdown(response) {
+    return `
+  
+};
+  module.exports = generateToTemplate;
