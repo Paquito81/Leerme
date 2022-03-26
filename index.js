@@ -3,9 +3,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 //We import the 'star' folder to interact with the gaint.js and LICENSE file 
-const star = require('star');
+// const star = require('star');
 
-const generateTemplate = require('star/gaint.js');
+// const generateTemplate = require('star/gaint.js');
 
 // TODO: Create an array of questions for user input
 // We create questions to generate answers that are going to be added to the README file
@@ -15,11 +15,7 @@ const questions = [
         name:'Name',
         message:'What is your name?', 
     },
-    {
-        type: 'input',
-        name:'Github',
-        message: 'Enter your Github Username.',
-    },
+   
     {
         type: 'input',
         name:'Project',
@@ -50,6 +46,11 @@ const questions = [
         type: 'input',
         name: 'Test',
         message: 'What command do you need to run this app?',
+    },
+    {
+        type: 'input',
+        name:'Github',
+        message: 'Enter your Github Username.',
     },
     {
         type: 'input',
@@ -115,9 +116,9 @@ function init() {
 
 // };
 
- function generateTemplate(obj) {
-     console.log(obj)
- } 
+//  function generateTemplate(obj) {
+//      console.log(obj)
+//  } 
 
 // Function call to initialize app
 init();
