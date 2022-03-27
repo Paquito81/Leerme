@@ -2,10 +2,10 @@
 //We import the 'fs' module to enable interactions with the file system
 const fs = require('fs');
 const inquirer = require('inquirer');
-//We import the 'star' folder to interact with the gaint.js and LICENSE file 
-// const star = require('star');
+const util = require('util');
+const {generateMarkdown} = require('/Users/hectorpalacios/Leerme/util/generateMarkdown.js');
 
-// const generateTemplate = require('star/gaint.js');
+const generateTemplate = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
 // We create questions to generate answers that are going to be added to the README file
@@ -55,55 +55,55 @@ const questions = [
     {
         type: 'input',
         name: 'Email',
-        message: 'What is your email?',
+        message: 'What is your email'
     }
 ] 
 // TODO: Create a function to write README file
-function writeToFile(fileName, answers) {
-    fs.writeFile(fileName, answers, function(err) {
-        console.log(filename)
-        console.log(answers)
-        if(err) {
-            return console.log(err)
 
-        } else {
-            console.log('Success! Information transferred to the README!')
+function writeToFile () {
+    generateTamplate('README.md', generateMarkdown(answers))
+    .then(answers => {
+        writeToFile(answers)
+        console.log('Success! Information transferred to README!')
+    }).catch((err) => console.error(err));
+}
 
-        }
-    }) 
     //=> {
         // if (err)
         // throw err;
         // console.log('Success! Information transferred to the README!')
     //});
-}
+//}
 
 //Use new function cause the old function was not generating a README file
-function init() {
-    console.log("Initializing App ...")
-    inquirer.prompt(questions)
-        .then(function(data) {
-            writeToFile("README.md", generateTemplate(answers));
-            console.log(answers)
-
-        })
-
-}
-// TODO: Create a function to initialize app
 // function init() {
-//     console.log("Initializing app ...")
+//     console.log("Initializing App ...")
 //     inquirer.prompt(questions)
-//     .then(answers => generateTemplate(answers) 
-//     )
+//         .then(function(answers) {
+//             writeToFile("README.md",answers);
+//             console.log(answers)
+
+//         })
+
 // }
-// function init(){
-//     console.log("Initializing app ...")
-//     inquirer.prompt(questions)
-//     .then(answers => generateTemplate(answers) 
-//     writeToFile('README.md',generateTemplate(answers));
-//     console.log(answers)
-//     )
-// }    
+ //TODO: Create a function to initialize app
+function init() {
+      console.log("Initializing app ...")
+      inquirer.prompt(questions)
+      .then(answers => generateTemplate(answers)  
+    )
+    
+}
+
+
+//  function init(){
+//      console.log("Initializing app ...")
+//      inquirer.prompt(questions)
+//     .then(answers => generateTemplate(answers) {
+//         writeToFile('README.md',answers);
+//          console.log(answers)
+//      })
+//  }    
 // unctifon init() {
 //     console.log("initializing app ...");
 //     inquirer.prompt(questions)
@@ -122,3 +122,4 @@ function init() {
 
 // Function call to initialize app
 init();
+
