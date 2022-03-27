@@ -3,7 +3,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const util = require('util');
-const {generateMarkdown} = require('/Users/hectorpalacios/Leerme/util/generateMarkdown.js');
+const generateToTemplate = require('/Users/hectorpalacios/Leerme/util/generateMarkdown.js');
 
 const generateTemplate = util.promisify(fs.writeFile);
 
@@ -19,7 +19,7 @@ const questions = [
     {
         type: 'input',
         name:'Project',
-        message: 'What is the project name?',
+        message: 'What is the project title?',
     },
     {
         type: 'input',
@@ -60,13 +60,15 @@ const questions = [
 ] 
 // TODO: Create a function to write README file
 
-function writeToFile () {
-    generateTamplate('README.md', generateMarkdown(answers))
-    .then(answers => {
-        writeToFile(answers)
-        console.log('Success! Information transferred to README!')
-    }).catch((err) => console.error(err));
-}
+function writeToFile (fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+        throw err;
+        console.log('Success! Information has been transfer to README!')
+    });
+
+};
+
 
     //=> {
         // if (err)
@@ -87,13 +89,13 @@ function writeToFile () {
 
 // }
  //TODO: Create a function to initialize app
-function init() {
-      console.log("Initializing app ...")
-      inquirer.prompt(questions)
-      .then(answers => generateTemplate(answers)  
-    )
+// function init() {
+//       console.log("Initializing app ...")
+//       inquirer.prompt(questions)
+//       .then(answers => generateTemplate(answers)  
+//     )
     
-}
+// }
 
 
 //  function init(){
@@ -104,22 +106,19 @@ function init() {
 //          console.log(answers)
 //      })
 //  }    
-// unctifon init() {
-//     console.log("initializing app ...");
-//     inquirer.prompt(questions)
-//         .then(answers => generateTemplate(answers)); {
-//             console.log(answers)
-//             writeToFile('README.md', generateTemplate(answers));
-//         };    
-//     };
+   function init() {
+       console.log("Initializing App ...");
+     inquirer.prompt(questions)
+         .then(function (answers) {
+             console.log(answers)
+             writeToFile('README.md', generateToTemplate(answers));
+         });    
+     };
         
 
 // };
 
-//  function generateTemplate(obj) {
-//      console.log(obj)
-//  } 
-
+//   ss
 // Function call to initialize app
 init();
 

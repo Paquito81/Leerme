@@ -1,12 +1,7 @@
-function renderLicenseBadge(license){
 
-}
-
-function generateMarkdown(answers) {
-    return `
-    # ${answers.Name}
+    # hector 
      //Name of the project
-    # ${answers.Project}
+    # readme generator
     //The description of the project
     # Description
     $ {answers.Description}
@@ -18,22 +13,18 @@ function generateMarkdown(answers) {
    *[Test](#test)
    *[Questions](#questions)
    #Installation:
-   ${answers.installation}
+   undefined
    
    ## Usage:
-   ${answers.usage}
+   undefined
    
    ## License
-   ${answers.licence}
+   undefined
    
    ## Contribution
-   ${answers.contribution}
+   undefined
    
    ## Testing
-   ${answers.test};
+   undefined;
 
-    `
-  
-}
-
-module.exports = generateMarkdown;
+    
