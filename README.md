@@ -1,19 +1,24 @@
 
-    # hector 
+    ##Name:
+    Hector 
      //Name of the project
-    # readme generator
+    ##Project Title
+     Readme generator
     //The description of the project
-    # Description
-    $ {answers.Description}
-    #Table of contents
-   *[Installation](#installation)
-   *[Usage](#usage)
-   *[License](#license)
-   *[Contributing](#contributing)
-   *[Test](#test)
-   *[Questions](#questions)
-   #Installation:
-   undefined
+    ##Description:
+    special app used to generated a readme file
+    ##Table of contents
+    -[Installation](#installation)
+    -[Usage](#usage)
+    -[License](#license)
+    -[Contributing](#contributing)
+    -[Test](#test)
+    -[Questions](#questions)
+    ##Installation:
+    undefined
+
+    ##License:
+    
    
    ## Usage:
    undefined
@@ -24,7 +29,7 @@
    ## Contribution
    undefined
    
-   ## Testing
+   ## Test
    undefined;
 
     
