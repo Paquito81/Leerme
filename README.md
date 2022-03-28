@@ -1,35 +1,41 @@
 
-    ##Name:
-    Hector 
-     //Name of the project
-    ##Project Title
-     Readme generator
-    //The description of the project
-    ##Description:
-    special app used to generated a readme file
-    ##Table of contents
+   ## Name:
+    Hector
+
+   ## Project Title
+     READ generator
+
+   ## Description:
+    Created in effort to swiftly generate a README file that use a consistant format
+
+   ## Table of contents
+
     -[Installation](#installation)
     -[Usage](#usage)
     -[License](#license)
     -[Contributing](#contributing)
     -[Test](#test)
-    -[Questions](#questions)
-    ##Installation:
-    undefined
+    -[Additional Info](#additional-info)
 
-    ##License:
+   ## Instructions:
+    download through Github, ensure inquirer is install, use commands
     
    
    ## Usage:
+   open terminal, -type 'node index.js', -answers the prompts that follow, 
+   
+   ## License:
    undefined
    
-   ## License
-   undefined
+   ## Contribution:
+   Hector Palacio
    
-   ## Contribution
-   undefined
-   
-   ## Test
-   undefined;
+   ## Test:
+   answers the prompts that appear in the terminal;
 
+   ## Additional Info:
+
+   -Github: Paquito81
+   - Link: https://github.com/paquito81/leerme.git
+   - Email: paquito1981@outlook.com;
     
