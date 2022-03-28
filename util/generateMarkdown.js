@@ -21,12 +21,12 @@ function generateMarkdown(answers) {
      ${answers.Project}
 
    ## Table of Contents 
-    - [Description](#description)
-    - [Instruction](#instruction)
-    - [Usage](#usage)
-    - [Contribution](#contribution)
-    - [Test](#test)
-    - [Additional Info](#additional-info)
+   1. [Description](#description)
+   2. [Instruction](#instruction)
+   3. [Usage](#usage)
+   4. [Contribution](#contribution)
+   5. [Test](#test)
+   6. [Additional Info](#additional-info)
 
    ## Description:
     ${answers.Description}
